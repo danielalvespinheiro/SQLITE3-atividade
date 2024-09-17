@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLite3 Example</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+<div class="main">
+    <h1>Crie a tabela clicando aqui!</h1>
+
+    <button id="btnCriarTbl"></button>
+
+    <h1>Users</h1>
+
+    <ul id="users-list"></ul>
+
+</div>
+
+</body>
+
+<script src="script.js">
+
+    document.getElementById('btnCriarTbl').addEventListener( 'click', () => {
+        fetch('/criar-tabel')
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('error', error))
+    })
+
+</script>
+</html>
